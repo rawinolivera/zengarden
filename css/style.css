@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allan:wght@700&display=swap");
+/*
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allan:wght@700&display=swap');
+
+$base:     #5CCCE4;
+$accent:   #449DD1;
+$white: #FFFFFF;
+$lgray: #D6DCD9;
+$black: #000000;
+$basefont: Oswald;
+$accentfont: Allan; */
+body {
+  background-color: #5CCCE4;
+}
+
+.intro {
+  margin: 1.5rem 1.5rem 0;
+}
+.intro header {
+  text-align: center;
+}
+.intro header h1 {
+  font-family: Allan;
+  font-size: 3.4rem;
+  margin-bottom: 0rem;
+}
+.intro header h2 {
+  font-family: Oswald;
+  font-size: 2rem;
+  margin-top: 0;
+}
+.intro .summary {
+  font-family: Oswald;
+  font-size: 1.5rem;
+  padding: 1.2rem;
+  background-color: #FFFFFF;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.intro .summary p:nth-child(2) {
+  margin-top: 0;
+}
+.intro .preamble {
+  font-family: Oswald;
+  font-size: 1.5rem;
+  padding: 1.2rem;
+  background-color: #FFFFFF;
+}
+.intro .preamble p {
+  font-size: 1.2rem;
+  padding: 0.25rem 1rem;
+  margin: 0;
+}
+
+.main .explanation,
+.participation,
+.benefits,
+.requirements {
+  margin: 0 1.5rem 0 1.5rem;
+  font-family: Oswald;
+  font-size: 1.5rem;
+  padding: 0 1.2rem 1.2rem;
+  background-color: #FFFFFF;
+}
+.main .explanation h3,
+.participation h3,
+.benefits h3,
+.requirements h3 {
+  text-align: center;
+  margin: 0 0 0.3rem;
+}
+.main .explanation p,
+.participation p,
+.benefits p,
+.requirements p {
+  font-size: 1.2rem;
+  padding: 0.25rem 1rem;
+  margin: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
