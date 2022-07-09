@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Allan:wght@700&display=swap");
-/*
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allan:wght@700&display=swap');
+.intro .preamble, .intro .summary {
+  font-family: Oswald;
+  font-size: 1.5rem;
+  padding: 1.2rem;
+  background-color: #FFFFFF;
+}
 
-$base:     #5CCCE4;
-$accent:   #449DD1;
-$white: #FFFFFF;
-$lgray: #D6DCD9;
-$black: #000000;
-$basefont: Oswald;
-$accentfont: Allan; */
+.sidebar .wrapper div li a, footer a {
+  color: #FFFFFF;
+  font-family: Oswald;
+  font-size: 1.2rem;
+}
+
 body {
   background-color: #5CCCE4;
 }
@@ -32,21 +34,16 @@ body {
   margin-top: 0;
 }
 .intro .summary {
-  font-family: Oswald;
-  font-size: 1.5rem;
-  padding: 1.2rem;
-  background-color: #FFFFFF;
   margin: 0;
   margin-bottom: 1rem;
 }
 .intro .summary p:nth-child(2) {
   margin-top: 0;
 }
-.intro .preamble {
-  font-family: Oswald;
-  font-size: 1.5rem;
-  padding: 1.2rem;
-  background-color: #FFFFFF;
+.intro .preamble h3 {
+  font-family: Allan;
+  text-align: center;
+  margin: 0 0 0.3rem;
 }
 .intro .preamble p {
   font-size: 1.2rem;
@@ -68,6 +65,7 @@ body {
 .participation h3,
 .benefits h3,
 .requirements h3 {
+  font-family: Allan;
   text-align: center;
   margin: 0 0 0.3rem;
 }
@@ -78,6 +76,137 @@ body {
   font-size: 1.2rem;
   padding: 0.25rem 1rem;
   margin: 0;
+}
+
+footer {
+  position: relative;
+  top: 50rem;
+  display: flex;
+  justify-content: space-between;
+}
+footer a {
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+.sidebar {
+  margin: 0 2rem;
+  color: #FFFFFF;
+}
+.sidebar .wrapper div {
+  border-bottom: 2px #FFFFFF solid;
+}
+.sidebar .wrapper div ul {
+  margin-top: 0;
+}
+.sidebar .wrapper div h3 {
+  font-family: Allan;
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+.sidebar .wrapper div li {
+  list-style: none;
+}
+@media only screen and (min-width: 50rem) {
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  header {
+    grid-column: span 3;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+  header h1, header h2 {
+    margin: 0;
+  }
+
+  .preamble {
+    margin-left: 1rem;
+  }
+
+  .preamble, .main {
+    grid-column: 2/4;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .main .explanation,
+.main .participation,
+.main .benefits,
+.main .requirements {
+    grid-column: 2/4;
+  }
+  .main footer {
+    grid-column: 1/4;
+    margin: 0 3rem;
+  }
+
+  .sidebar .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    margin: 0 2.5rem;
+  }
+  .sidebar .wrapper .design-selection {
+    grid-column: 1/3;
+    grid-row: 1/4;
+  }
+  .sidebar .wrapper .design-archives {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    border-bottom: 0;
+  }
+  .sidebar .wrapper .zen-resources {
+    grid-column: 3/4;
+    grid-row: 2/4;
+  }
+  .sidebar .wrapper .zen-resources h3 {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .page-wrapper .intro {
+    grid-column: 1/7;
+  }
+  .page-wrapper .intro header {
+    margin: 0.5rem 3rem;
+    padding: 2rem;
+  }
+  .page-wrapper .intro .preamble, .page-wrapper .intro .summary {
+    margin-top: 1rem;
+  }
+  .page-wrapper .main {
+    grid-column: 1/7;
+  }
+  .page-wrapper .main footer {
+    top: 2rem;
+    justify-content: space-around;
+    left: 15%;
+  }
+  .page-wrapper .sidebar {
+    grid-column: 7/9;
+    margin: 0;
+  }
+  .page-wrapper .sidebar .wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .page-wrapper .sidebar .wrapper .design-archives {
+    border-bottom: 2px #FFFFFF solid;
+  }
+  .page-wrapper .sidebar .wrapper .zen-resources h3 {
+    margin-top: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

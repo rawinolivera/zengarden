@@ -1,15 +1,15 @@
 @import "setup";
-/*
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allan:wght@700&display=swap');
 
-$base:     #5CCCE4;
-$accent:   #449DD1;
-$white: #FFFFFF;
-$lgray: #D6DCD9;
-$black: #000000;
-$basefont: Oswald;
-$accentfont: Allan; */
+//@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Allan:wght@700&display=swap');
+
+//$base:     #5CCCE4;
+//$accent:   #449DD1;
+//$white: #FFFFFF;
+//$lgray: #D6DCD9;
+//$black: #000000;
+//$basefont: Oswald;
+//$accentfont: Allan;
 body {
     background-color: $base;
 }
@@ -32,10 +32,7 @@ body {
     }
 
     .summary {
-        font-family: $basefont;
-        font-size: 1.5rem;
-        padding: 1.2rem;
-        background-color: $white;
+        @extend %model;
         margin: 0;
         margin-bottom: 1rem;
         p:nth-child(2) {
@@ -44,15 +41,8 @@ body {
     }
 
     .preamble {
-        font-family: $basefont;
-        font-size: 1.5rem;
-        padding: 1.2rem;
-        background-color: $white;
-        p {
-            font-size: 1.2rem;
-            padding: 0.25rem 1rem;
-            margin: 0;
-        }
+        @extend %model;
+        @include main-base;
     }
 }
 
@@ -66,14 +56,143 @@ body {
         font-size: 1.5rem;
         padding: 0 1.2rem 1.2rem;
         background-color: $white;
-        h3 {
-            text-align: center;
-            margin: 0 0 .3rem;
-        }
-        p {
-            font-size: 1.2rem;
-            padding: 0.25rem 1rem;
-            margin: 0;
-        };
+        @include main-base;
 }
 
+footer {
+    position: relative;
+    top: 50rem;
+    display: flex;
+    justify-content: space-between;
+    a {
+        @extend %links;
+        font-weight: 700;
+        padding: .5rem;
+    }
+}
+
+.sidebar {
+    margin: 0 2rem;
+    color: $white;
+    .wrapper div {
+        border-bottom: 2px $white solid;
+        ul {
+            margin-top: 0;
+        }
+        h3 {
+            font-family: $accentfont;
+            font-size: 1.5rem;
+            margin: 1rem 0 .5rem;
+        }
+        li {
+            list-style: none;
+            a {
+                @extend %links;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 50rem) {
+    .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    header {
+        grid-column: span 3;
+        background-color: rgba($color: $black, $alpha: .2);
+        padding: 1rem .5rem;
+        margin-bottom: 1rem;
+        h1, h2 {
+            margin: 0;
+        }
+    }
+
+    .preamble {
+        margin-left: 1rem;
+    }
+    .preamble, .main {
+        grid-column: 2 / 4;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .explanation,
+        .participation,
+        .benefits,
+        .requirements {
+            grid-column: 2 / 4;
+        }
+        footer {
+            grid-column: 1 / 4;
+            margin: 0 3rem;
+        }
+    }
+
+    .sidebar .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        margin: 0 2.5rem;
+        .design-selection {
+            grid-column: 1 / 3;
+            grid-row: 1 / 4;
+        }
+        .design-archives {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+            border-bottom: 0;
+        }
+        .zen-resources {
+            grid-column: 3 / 4;
+            grid-row: 2 / 4;
+            h3 {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+    .page-wrapper {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        .intro {
+            grid-column: 1 / 7;
+            header {
+                margin: .5rem 3rem;
+                padding: 2rem;
+            }
+            .preamble, .summary {
+                margin-top: 1rem;
+            }
+        }
+
+        .main {
+            grid-column: 1 / 7;
+            footer {
+                top: 2rem;
+                justify-content: space-around;
+                left: 15%;
+            }
+        }
+
+        .sidebar {
+            grid-column: 7 / 9;
+            margin: 0;
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                .design-archives {
+                    border-bottom: 2px $white solid;
+                }
+                .zen-resources h3 {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
