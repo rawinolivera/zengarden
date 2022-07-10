@@ -232,19 +232,21 @@ footer {
             }
         }
     }
-
+    .page-wrapper {
+        text-align: center;
+    }
     .page-wrapper::after{
         grid-column: 7 / 9;
         grid-row: 1;
         content: url('anchor.svg');
-        zoom: 15%;
+        zoom: 18%; //15%
         z-index: -1;
         height: 10px;
-        animation: anchor 9s linear infinite;
+        animation: anchor 7s linear infinite;
     }
     @keyframes anchor {
         0% { transform: translate(0,0); }
-        50% { transform: translate(0,-2500px); }
+        50% { transform: translate(0,0); } //(0,-2500px)
         75% { transform: translate(0, 2500px);}
         100% { transform: translate(0,0); }
     }
