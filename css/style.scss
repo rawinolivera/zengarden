@@ -111,23 +111,6 @@ footer {
         }
     }
 }
-/*
-@media only screen and (max-width: 600px) {
-    .page-wrapper::after{
-        content: url('anchor.svg');
-        zoom: 15%;
-        z-index: -1;
-        height: 10px;
-        animation: anchor 9s linear infinite;
-    }
-    @keyframes anchor {
-        0% { transform: translate(0,0); }
-        50% { transform: translate(0,-2500px); }
-        75% { transform: translate(0, 2500px);}
-        100% { transform: translate(0,0); }
-    }
-}
-*/
 
 @media only screen and (min-width: 50rem) {
     
