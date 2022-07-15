@@ -22,11 +22,16 @@ body {
   font-family: Oswald, verdana, arial, sans-serif;
 }
 
+.page-wrapper h3:hover {
+  color: #449DD1;
+}
+
 .intro {
   margin: 1.5rem 1.5rem 0;
 }
 .intro header {
   text-align: center;
+  
 }
 .intro header h1 {
   font-family: Allan;
@@ -37,7 +42,7 @@ body {
 .intro header h2 {
   font-family: Oswald;
   font-size: 2rem;
-  margin-top: 0;
+  margin-top: 0.5rem;
   color: #333;
 }
 .intro .summary {
@@ -88,10 +93,20 @@ body {
   margin: 0;
   color: #333;
 }
+.main .explanation h3:hover,
+.participation h3:hover,
+.benefits h3:hover,
+.requirements h3:hover {
+  color: #449DD1;
+}
+
+.preamble h3:hover {
+  color: #449DD1;
+}
 
 footer {
-  background-image: url("./coral2.png");
-  background-attachment: fixed;
+  background-image: url("./sand.png");
+  background-size: cover;
   position: relative;
   top: 46rem;
   display: flex;
@@ -128,23 +143,6 @@ footer a:hover {
   background-color: #333;
 }
 
-/*
-@media only screen and (max-width: 600px) {
-    .page-wrapper::after{
-        content: url('anchor.svg');
-        zoom: 15%;
-        z-index: -1;
-        height: 10px;
-        animation: anchor 9s linear infinite;
-    }
-    @keyframes anchor {
-        0% { transform: translate(0,0); }
-        50% { transform: translate(0,-2500px); }
-        75% { transform: translate(0, 2500px);}
-        100% { transform: translate(0,0); }
-    }
-}
-*/
 @media only screen and (min-width: 50rem) {
   .intro {
     display: grid;
@@ -153,12 +151,16 @@ footer a:hover {
 
   header {
     grid-column: span 3;
-    background-color: rgba(92, 204, 228, 0.5);
     padding: 1rem 0.5rem;
     margin-bottom: 1rem;
   }
   header h1, header h2 {
     margin: 0;
+  }
+
+  .summary {
+    background-color: rgba(77, 62, 82, 0.8);
+    color: #449DD1;
   }
 
   .preamble {
@@ -218,9 +220,14 @@ footer a:hover {
   .page-wrapper .intro header {
     margin: 0.5rem 3rem;
     padding: 2rem;
+    background-color: rgba(92, 204, 228, 0.9);
   }
   .page-wrapper .intro .preamble, .page-wrapper .intro .summary {
     margin-top: 1rem;
+  }
+  .page-wrapper .intro .summary {
+    background-color: rgba(77, 62, 82, 0.8);
+    color: #449DD1;
   }
   .page-wrapper .main {
     grid-column: 1/7;
@@ -244,6 +251,13 @@ footer a:hover {
   }
   .page-wrapper .sidebar .wrapper .zen-resources h3 {
     margin-top: 1rem;
+  }
+  .page-wrapper .sidebar::after {
+    grid-column: 7/9;
+    grid-row: 6;
+    content: url("./sea_turtle.svg") url("./sea_turtle.svg") url("./sea_turtle.svg");
+    zoom: 28%;
+    z-index: -1;
   }
 
   .page-wrapper {
@@ -273,6 +287,13 @@ footer a:hover {
     100% {
       transform: translate(0, 0);
     }
+  }
+  .extra4 {
+    grid-column: 1/9;
+    grid-row: 3;
+    content: url("./seahorse.svg");
+    zoom: 18%;
+    z-index: 1;
   }
 }
 
