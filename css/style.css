@@ -31,7 +31,8 @@ body {
 }
 .intro header {
   text-align: center;
-  
+  background-image: url("./sand_top.png");
+  background-size: cover;
 }
 .intro header h1 {
   font-family: Allan;
@@ -109,6 +110,7 @@ footer {
   background-size: cover;
   position: relative;
   top: 46rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
 }
@@ -118,6 +120,18 @@ footer a {
 }
 footer a:hover {
   color: #449DD1;
+  animation: beat 3s;
+}
+@keyframes beat {
+  0% {
+    transform: none;
+  }
+  25% {
+    transform: scale(2);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 .sidebar {
@@ -208,6 +222,60 @@ footer a:hover {
   .sidebar .wrapper .zen-resources h3 {
     margin-top: 0;
   }
+
+  .page-wrapper::before {
+    position: absolute;
+    left: -5rem;
+    top: 320rem;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    content: url("./seahorse.svg");
+    zoom: 14%;
+    z-index: -1;
+    animation: horse 24s infinite;
+  }
+
+  .page-wrapper .intro::before {
+    position: absolute;
+    left: -5rem;
+    top: 570rem;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    content: url("./seahorse.svg");
+    zoom: 14%;
+    z-index: -1;
+    animation: horse 24s infinite;
+  }
+
+  .page-wrapper .intro::after {
+    position: absolute;
+    left: -5rem;
+    top: 820rem;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    content: url("./seahorse.svg");
+    zoom: 14%;
+    z-index: -1;
+    animation: horse 24s infinite;
+  }
+
+  @keyframes horse {
+    0% {
+      transform: none;
+    }
+    25% {
+      transform: rotateY(180deg);
+    }
+    50% {
+      transform: none;
+    }
+    75% {
+      transform: rotateY(-180deg);
+    }
+    100% {
+      transform: none;
+    }
+  }
 }
 @media only screen and (min-width: 64rem) {
   .page-wrapper {
@@ -252,12 +320,37 @@ footer a:hover {
   .page-wrapper .sidebar .wrapper .zen-resources h3 {
     margin-top: 1rem;
   }
-  .page-wrapper .sidebar::after {
+  @keyframes turtle {
+    25% {
+      transform: rotateZ(200deg);
+    }
+    45% {
+      transform: translate(0%, 147.5%);
+    }
+    60% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: none;
+    }
+  }
+  .page-wrapper .sidebar .wrapper::before {
+    position: absolute;
+    top: 310rem;
     grid-column: 7/9;
-    grid-row: 6;
-    content: url("./sea_turtle.svg") url("./sea_turtle.svg") url("./sea_turtle.svg");
-    zoom: 28%;
+    content: url("./sea_turtle.svg");
+    zoom: 26%;
     z-index: -1;
+    animation: turtle 12s infinite;
+  }
+  .page-wrapper .sidebar .wrapper::after {
+    position: absolute;
+    top: 430rem;
+    grid-column: 7/9;
+    content: url("./sea_turtle.svg");
+    zoom: 26%;
+    z-index: -1;
+    animation: turtle 12s infinite;
   }
 
   .page-wrapper {
@@ -268,10 +361,11 @@ footer a:hover {
     grid-column: 7/9;
     grid-row: 1;
     content: url("anchor.svg");
-    zoom: 18%;
+    zoom: 16%;
     z-index: -1;
     height: 10px;
-    animation: anchor 7s linear infinite;
+    animation: anchor 8s linear infinite;
+    animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.5);
   }
 
   @keyframes anchor {
@@ -287,13 +381,6 @@ footer a:hover {
     100% {
       transform: translate(0, 0);
     }
-  }
-  .extra4 {
-    grid-column: 1/9;
-    grid-row: 3;
-    content: url("./seahorse.svg");
-    zoom: 18%;
-    z-index: 1;
   }
 }
 
