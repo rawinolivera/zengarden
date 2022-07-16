@@ -167,6 +167,7 @@ footer a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+
   header {
     grid-column: span 3;
     padding: 1rem 0.5rem;
@@ -175,16 +176,20 @@ footer a:hover {
   header h1, header h2 {
     margin: 0;
   }
+
   .summary {
     background-color: rgba(77, 62, 82, 0.8);
     color: #449DD1;
   }
+
   .preamble {
     margin-left: 1rem;
   }
+
   .preamble, .main {
     grid-column: 2/4;
   }
+
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -234,6 +239,7 @@ footer a:hover {
     z-index: -1;
     animation: turtle 20s infinite;
   }
+
   .sidebar .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -256,6 +262,7 @@ footer a:hover {
   .sidebar .wrapper .zen-resources h3 {
     margin-top: 0;
   }
+
   .page-wrapper::before {
     position: absolute;
     left: -5rem;
@@ -267,6 +274,7 @@ footer a:hover {
     z-index: -1;
     animation: horse 24s infinite;
   }
+
   .page-wrapper .intro::before {
     position: absolute;
     left: -5rem;
@@ -278,6 +286,7 @@ footer a:hover {
     z-index: -1;
     animation: horse 24s infinite;
   }
+
   .page-wrapper .intro::after {
     position: absolute;
     left: -5rem;
@@ -289,6 +298,7 @@ footer a:hover {
     z-index: -1;
     animation: horse 24s infinite;
   }
+
   @keyframes horse {
     0% {
       transform: none;
@@ -390,9 +400,11 @@ footer a:hover {
     z-index: -1;
     animation: turtle 12s infinite;
   }
+
   .page-wrapper {
     text-align: center;
   }
+
   .page-wrapper::after {
     grid-column: 7/9;
     grid-row: 1;
@@ -400,9 +412,9 @@ footer a:hover {
     zoom: 16%;
     z-index: -1;
     height: 10px;
-    animation: anchor 8s linear infinite;
-    animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.5);
+    animation: anchor 8s cubic-bezier(0, 0.9, 0.5, 1.5) infinite;
   }
+
   @keyframes anchor {
     0% {
       transform: translate(0, 0);

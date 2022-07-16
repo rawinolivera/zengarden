@@ -362,10 +362,7 @@ footer {
             zoom: 26%;
             z-index: -1;
             animation: turtle 12s infinite;
-        }
-
-        
-        
+        }       
     }
     .page-wrapper {
         text-align: center;
@@ -378,8 +375,7 @@ footer {
         zoom: 16%; //15%
         z-index: -1;
         height: 10px;
-        animation: anchor 8s linear infinite;
-        animation-timing-function: cubic-bezier(0,.9,.5,1.5);
+        animation: anchor 8s cubic-bezier(0,.9,.5,1.5) infinite;
     }
     @keyframes anchor {
         0% { transform: translate(0,0); }
