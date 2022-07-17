@@ -12,29 +12,42 @@
 //$accentfont: Allan;
 body{
     background-image: url('../css/smallerswimmingfish.gif');
+    background-position: center center;
+    background-size: cover;
+
     background-attachment: fixed;
-    background-size: 100vw 100vh;
+ /*   background-size: 100vw 100vh; */
     z-index: 0;
     font-family: $basefont, verdana, arial, sans-serif;
    }
 
-
+.page-wrapper h3:hover{
+    color: $accent;
+}
 
 .intro {
     margin: 1.5rem 1.5rem 0;
+    
     header {
     text-align: center;
+    background-color: rgba(92, 204, 228, 0.9);
+    background-image: url('./sand_top.png');
+    background-size: cover;
+    align-items: center;
+    
         h1 {
             font-family: $accentfont;
-            font-size: 3.4rem;
+            font-size: clamp(16px, (1rem + 5vw), 4rem);
             margin-bottom: 0rem;
             color: $white;
+            padding-top: .5rem;
         }
 
         h2 {
             font-family: $basefont;
             font-size: 2rem;
-            margin-top: 0;
+            margin: 0 0 1rem;
+            padding-bottom: .75rem;
             color: $black;
         }
     }
@@ -65,24 +78,39 @@ body{
         padding: 0 1.2rem 1.2rem;
         background-color: $white;
         @include main-base;
+
+        h3:hover{
+            color: $accent;
+        }
+}
+
+.preamble h3:hover{
+    color: $accent;
 }
 
 footer {
-    background-image: url('./coral2.png');
-    background-attachment: fixed;
- //   background-position: center;
-
+    background-image: url('./sand.png');
+    background-size:     cover;                      
     position: relative;
     top: 46rem;
+    padding-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     a {
         @extend %links;
         font-weight: 700;
         padding: .5rem;
+        text-shadow: .2rem .1rem .1rem $black;
     }
     a:hover {
         color: $accent;
+        animation: beat 3s;
+    }
+
+    @keyframes beat {
+        0% {transform: none;}
+        25% {transform: scale(2);}
+        100% {transform: none;}
     }
 }
 
@@ -112,7 +140,7 @@ footer {
     }
 }
 
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 50rem ) {
     
     .intro {
         display: grid;
@@ -121,12 +149,17 @@ footer {
     
     header {
         grid-column: span 3;
-        background-color: rgba($color: $base, $alpha: .5);
         padding: 1rem .5rem;
         margin-bottom: 1rem;
         h1, h2 {
             margin: 0;
         }
+    }
+
+    .summary{
+        background-color: rgba(77,62,82,0.8);
+        color: $accent;
+
     }
 
     .preamble {
@@ -148,6 +181,27 @@ footer {
         footer {
             grid-column: 1 / 4;
             margin: 0 3rem;
+        }
+
+        @keyframes turtle {
+            0% {opacity: 0;}
+            0% {transform: translate(150%,0);}
+            20% {opacity: 0.4;} 
+            55% {opacity: 1;}
+            80% {opacity: 0.5;}
+            90% {opacity: 0.3;}
+            95% {opacity: 0.2;}
+            100% {opacity: 0;}
+        }
+
+        footer::before {
+            position: absolute;
+            top: -72rem;
+            grid-column: 7/9;
+            content: url('./sea_turtle.svg');
+            zoom: 26%;
+            z-index: -1;
+            animation: turtle 20s infinite;
         }
     }
 
@@ -173,29 +227,97 @@ footer {
             }
         }
     }
+
+    .page-wrapper::before{
+        position: absolute;
+        left: -5rem;
+        top: 320rem;
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        content: url('./seahorse.svg');
+        zoom: 14%; //15%
+        z-index: -1;
+        animation: horse 24s infinite;
+    }
+
+    .page-wrapper .intro::before{
+        position: absolute;
+        left: -5rem;
+        top: 570rem;
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        content: url('./seahorse.svg');
+        zoom: 14%; //15%
+        z-index: -1;
+        animation: horse 24s infinite;
+    }
+
+    .page-wrapper .intro::after{
+        position: absolute;
+        left: -5rem;
+        top: 820rem;
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        content: url('./seahorse.svg');
+        zoom: 14%; //15%
+        z-index: -1;
+        animation: horse 24s infinite;
+    }
+
+    @keyframes horse {
+        0% {transform: none; }
+        25% {transform: rotateY(180deg); }
+        50% {transform: none; }
+        75% {transform: rotateY(-180deg); }
+        100% {transform: none; }
+    }
 }
 
 @media only screen and (min-width: 64rem) {
     .page-wrapper {
         display: grid;
+        
         grid-template-columns: repeat(8, 1fr);
         .intro {
             grid-column: 1 / 7;
             header {
-                margin: .5rem 3rem;
-                padding: 2rem;
+                margin: .5rem 3rem 0;
+                padding: .5rem 0 .5rem;
+                background-image: none;
+                h2 {
+                    padding-top: 0;
+                    margin-bottom: 0;
+                }
             }
+
             .preamble, .summary {
                 margin-top: 1rem;
+                
+            }
+            .summary{
+                background-color: rgba(77,62,82,0.8);
+                color: $accent;
+
             }
         }
-
+ 
         .main {
             grid-column: 1 / 7;
+            
             footer {
                 top: 2rem;
                 justify-content: space-around;
                 left: 15%;
+            }
+
+            footer::before {
+                position: absolute;
+                top: -72rem;
+                grid-column: 7/9;
+                content: url('./sea_turtle.svg');
+                zoom: 26%;
+                z-index: -1;
+                display: none;
             }
         }
 
@@ -214,18 +336,42 @@ footer {
                 }
             }
         }
-    }
-    .page-wrapper {
-        text-align: center;
+
+        @keyframes turtle {
+            25% {transform: rotateZ(200deg); }
+            45% {transform: translate(0%,147.5%); }
+            60% {transform: rotateZ(0deg); }
+            100% {transform: none; } 
+        }
+
+        .sidebar .wrapper::before{
+            position: absolute;
+            top: 320rem;
+            grid-column: 7/9;
+            content: url('./sea_turtle.svg');
+            zoom: 26%;
+            z-index: -1;
+            animation: turtle 12s infinite;
+        }
+
+        .sidebar .wrapper::after{
+            position: absolute;
+            top: 430rem;
+            grid-column: 7/9;
+            content: url('./sea_turtle.svg');
+            zoom: 26%;
+            z-index: -1;
+            animation: turtle 12s infinite;
+        }       
     }
     .page-wrapper::after{
         grid-column: 7 / 9;
         grid-row: 1;
         content: url('anchor.svg');
-        zoom: 18%; //15%
+        zoom: 16%; //15%
         z-index: -1;
         height: 10px;
-        animation: anchor 7s linear infinite;
+        animation: anchor 8s cubic-bezier(0,.9,.5,1.5) infinite;
     }
     @keyframes anchor {
         0% { transform: translate(0,0); }
