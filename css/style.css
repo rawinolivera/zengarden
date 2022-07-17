@@ -16,10 +16,16 @@
 
 body {
   background-image: url("../css/smallerswimmingfish.gif");
+  background-position: center center;
+  background-size: cover;
   background-attachment: fixed;
-  background-size: 100vw 100vh;
+  /*   background-size: 100vw 100vh; */
   z-index: 0;
   font-family: Oswald, verdana, arial, sans-serif;
+}
+
+.page-wrapper h3:hover {
+  color: #449DD1;
 }
 
 .intro {
@@ -27,17 +33,23 @@ body {
 }
 .intro header {
   text-align: center;
+  background-color: rgba(92, 204, 228, 0.9);
+  background-image: url("./sand_top.png");
+  background-size: cover;
+  align-items: center;
 }
 .intro header h1 {
   font-family: Allan;
-  font-size: 3.4rem;
+  font-size: clamp(16px, 1rem + 5vw, 4rem);
   margin-bottom: 0rem;
   color: #FFFFFF;
+  padding-top: 0.5rem;
 }
 .intro header h2 {
   font-family: Oswald;
   font-size: 2rem;
-  margin-top: 0;
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
   color: #333;
 }
 .intro .summary {
@@ -88,21 +100,45 @@ body {
   margin: 0;
   color: #333;
 }
+.main .explanation h3:hover,
+.participation h3:hover,
+.benefits h3:hover,
+.requirements h3:hover {
+  color: #449DD1;
+}
+
+.preamble h3:hover {
+  color: #449DD1;
+}
 
 footer {
-  background-image: url("./coral2.png");
-  background-attachment: fixed;
+  background-image: url("./sand.png");
+  background-size: cover;
   position: relative;
   top: 46rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
 }
 footer a {
   font-weight: 700;
   padding: 0.5rem;
+  text-shadow: 0.2rem 0.1rem 0.1rem #333;
 }
 footer a:hover {
   color: #449DD1;
+  animation: beat 3s;
+}
+@keyframes beat {
+  0% {
+    transform: none;
+  }
+  25% {
+    transform: scale(2);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 .sidebar {
@@ -136,12 +172,16 @@ footer a:hover {
 
   header {
     grid-column: span 3;
-    background-color: rgba(92, 204, 228, 0.5);
     padding: 1rem 0.5rem;
     margin-bottom: 1rem;
   }
   header h1, header h2 {
     margin: 0;
+  }
+
+  .summary {
+    background-color: rgba(77, 62, 82, 0.8);
+    color: #449DD1;
   }
 
   .preamble {
@@ -166,6 +206,41 @@ footer a:hover {
     grid-column: 1/4;
     margin: 0 3rem;
   }
+  @keyframes turtle {
+    0% {
+      opacity: 0;
+    }
+    0% {
+      transform: translate(150%, 0);
+    }
+    20% {
+      opacity: 0.4;
+    }
+    55% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0.5;
+    }
+    90% {
+      opacity: 0.3;
+    }
+    95% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .main footer::before {
+    position: absolute;
+    top: -72rem;
+    grid-column: 7/9;
+    content: url("./sea_turtle.svg");
+    zoom: 26%;
+    z-index: -1;
+    animation: turtle 20s infinite;
+  }
 
   .sidebar .wrapper {
     display: grid;
@@ -189,6 +264,60 @@ footer a:hover {
   .sidebar .wrapper .zen-resources h3 {
     margin-top: 0;
   }
+
+  .page-wrapper::before {
+    position: absolute;
+    left: -5rem;
+    top: 320rem;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    content: url("./seahorse.svg");
+    zoom: 14%;
+    z-index: -1;
+    animation: horse 24s infinite;
+  }
+
+  .page-wrapper .intro::before {
+    position: absolute;
+    left: -5rem;
+    top: 570rem;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    content: url("./seahorse.svg");
+    zoom: 14%;
+    z-index: -1;
+    animation: horse 24s infinite;
+  }
+
+  .page-wrapper .intro::after {
+    position: absolute;
+    left: -5rem;
+    top: 820rem;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    content: url("./seahorse.svg");
+    zoom: 14%;
+    z-index: -1;
+    animation: horse 24s infinite;
+  }
+
+  @keyframes horse {
+    0% {
+      transform: none;
+    }
+    25% {
+      transform: rotateY(180deg);
+    }
+    50% {
+      transform: none;
+    }
+    75% {
+      transform: rotateY(-180deg);
+    }
+    100% {
+      transform: none;
+    }
+  }
 }
 @media only screen and (min-width: 64rem) {
   .page-wrapper {
@@ -199,11 +328,20 @@ footer a:hover {
     grid-column: 1/7;
   }
   .page-wrapper .intro header {
-    margin: 0.5rem 3rem;
-    padding: 2rem;
+    margin: 0.5rem 3rem 0;
+    padding: 0.5rem 0 0.5rem;
+    background-image: none;
+  }
+  .page-wrapper .intro header h2 {
+    padding-top: 0;
+    margin-bottom: 0;
   }
   .page-wrapper .intro .preamble, .page-wrapper .intro .summary {
     margin-top: 1rem;
+  }
+  .page-wrapper .intro .summary {
+    background-color: rgba(77, 62, 82, 0.8);
+    color: #449DD1;
   }
   .page-wrapper .main {
     grid-column: 1/7;
@@ -212,6 +350,15 @@ footer a:hover {
     top: 2rem;
     justify-content: space-around;
     left: 15%;
+  }
+  .page-wrapper .main footer::before {
+    position: absolute;
+    top: -72rem;
+    grid-column: 7/9;
+    content: url("./sea_turtle.svg");
+    zoom: 26%;
+    z-index: -1;
+    display: none;
   }
   .page-wrapper .sidebar {
     grid-column: 7/9;
@@ -228,19 +375,47 @@ footer a:hover {
   .page-wrapper .sidebar .wrapper .zen-resources h3 {
     margin-top: 1rem;
   }
-
-  .page-wrapper {
-    text-align: center;
+  @keyframes turtle {
+    25% {
+      transform: rotateZ(200deg);
+    }
+    45% {
+      transform: translate(0%, 147.5%);
+    }
+    60% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: none;
+    }
+  }
+  .page-wrapper .sidebar .wrapper::before {
+    position: absolute;
+    top: 320rem;
+    grid-column: 7/9;
+    content: url("./sea_turtle.svg");
+    zoom: 26%;
+    z-index: -1;
+    animation: turtle 12s infinite;
+  }
+  .page-wrapper .sidebar .wrapper::after {
+    position: absolute;
+    top: 430rem;
+    grid-column: 7/9;
+    content: url("./sea_turtle.svg");
+    zoom: 26%;
+    z-index: -1;
+    animation: turtle 12s infinite;
   }
 
   .page-wrapper::after {
     grid-column: 7/9;
     grid-row: 1;
     content: url("anchor.svg");
-    zoom: 18%;
+    zoom: 16%;
     z-index: -1;
     height: 10px;
-    animation: anchor 7s linear infinite;
+    animation: anchor 8s cubic-bezier(0, 0.9, 0.5, 1.5) infinite;
   }
 
   @keyframes anchor {
