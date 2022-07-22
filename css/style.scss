@@ -1,33 +1,18 @@
 @import "setup";
-
-//@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Allan:wght@700&display=swap');
-
-//$base:     #5CCCE4;
-//$accent:   #449DD1;
-//$white: #FFFFFF;
-//$lgray: #D6DCD9;
-//$black: #000000;
-//$basefont: Oswald;
-//$accentfont: Allan;
 body{
     background-image: url('../css/smallerswimmingfish.gif');
     background-position: center center;
     background-size: cover;
 
     background-attachment: fixed;
- /*   background-size: 100vw 100vh; */
     z-index: 0;
     font-family: $basefont, verdana, arial, sans-serif;
    }
-
 .page-wrapper h3:hover{
     color: $accent;
 }
-
 .intro {
     margin: 1.5rem 1.5rem 0;
-    
     header {
     text-align: center;
     background-color: rgba(92, 204, 228, 0.9);
@@ -51,7 +36,6 @@ body{
             color: $black;
         }
     }
-
     .summary {
         @extend %model;
         margin: 0;
@@ -66,7 +50,6 @@ body{
         @include main-base;
     }
 }
-
 .main
     .explanation,
     .participation,
@@ -83,7 +66,6 @@ body{
             color: $accent;
         }
 }
-
 .preamble h3:hover{
     color: $accent;
 }
@@ -105,12 +87,6 @@ footer {
     a:hover {
         color: $accent;
         animation: beat 3s;
-    }
-
-    @keyframes beat {
-        0% {transform: none;}
-        25% {transform: scale(2);}
-        100% {transform: none;}
     }
 }
 
@@ -146,7 +122,6 @@ footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    
     header {
         grid-column: span 3;
         padding: 1rem .5rem;
@@ -155,20 +130,17 @@ footer {
             margin: 0;
         }
     }
-
     .summary{
         background-color: rgba(77,62,82,0.8);
         color: $accent;
 
     }
-
     .preamble {
         margin-left: 1rem;
     }
     .preamble, .main {
         grid-column: 2 / 4;
     }
-
     .main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -182,18 +154,6 @@ footer {
             grid-column: 1 / 4;
             margin: 0 3rem;
         }
-
-        @keyframes turtle {
-            0% {opacity: 0;}
-            0% {transform: translate(150%,0);}
-            20% {opacity: 0.4;} 
-            55% {opacity: 1;}
-            80% {opacity: 0.5;}
-            90% {opacity: 0.3;}
-            95% {opacity: 0.2;}
-            100% {opacity: 0;}
-        }
-
         footer::before {
             position: absolute;
             top: -72rem;
@@ -201,10 +161,9 @@ footer {
             content: url('./sea_turtle.svg');
             zoom: 26%;
             z-index: -1;
-            animation: turtle 20s infinite;
+            animation: h-turtle 20s infinite;
         }
     }
-
     .sidebar .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -227,7 +186,6 @@ footer {
             }
         }
     }
-
     .page-wrapper::before{
         position: absolute;
         left: -5rem;
@@ -239,7 +197,6 @@ footer {
         z-index: -1;
         animation: horse 24s infinite;
     }
-
     .page-wrapper .intro::before{
         position: absolute;
         left: -5rem;
@@ -251,7 +208,6 @@ footer {
         z-index: -1;
         animation: horse 24s infinite;
     }
-
     .page-wrapper .intro::after{
         position: absolute;
         left: -5rem;
@@ -263,20 +219,11 @@ footer {
         z-index: -1;
         animation: horse 24s infinite;
     }
-
-    @keyframes horse {
-        0% {transform: none; }
-        25% {transform: rotateY(180deg); }
-        50% {transform: none; }
-        75% {transform: rotateY(-180deg); }
-        100% {transform: none; }
-    }
 }
 
 @media only screen and (min-width: 64rem) {
     .page-wrapper {
         display: grid;
-        
         grid-template-columns: repeat(8, 1fr);
         .intro {
             grid-column: 1 / 7;
@@ -300,7 +247,6 @@ footer {
 
             }
         }
- 
         .main {
             grid-column: 1 / 7;
             
@@ -309,7 +255,6 @@ footer {
                 justify-content: space-around;
                 left: 15%;
             }
-
             footer::before {
                 position: absolute;
                 top: -72rem;
@@ -320,7 +265,6 @@ footer {
                 display: none;
             }
         }
-
         .sidebar {
             grid-column: 7 / 9;
             margin: 0;
@@ -336,14 +280,6 @@ footer {
                 }
             }
         }
-
-        @keyframes turtle {
-            25% {transform: rotateZ(200deg); }
-            45% {transform: translate(0%,147.5%); }
-            60% {transform: rotateZ(0deg); }
-            100% {transform: none; } 
-        }
-
         .sidebar .wrapper::before{
             position: absolute;
             top: 320rem;
@@ -353,7 +289,6 @@ footer {
             z-index: -1;
             animation: turtle 12s infinite;
         }
-
         .sidebar .wrapper::after{
             position: absolute;
             top: 430rem;
@@ -372,11 +307,5 @@ footer {
         z-index: -1;
         height: 10px;
         animation: anchor 8s cubic-bezier(0,.9,.5,1.5) infinite;
-    }
-    @keyframes anchor {
-        0% { transform: translate(0,0); }
-        50% { transform: translate(0,0); } //(0,-2500px)
-        75% { transform: translate(0, 2500px);}
-        100% { transform: translate(0,0); }
     }
 }
